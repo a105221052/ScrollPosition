@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        let w, scrollToTop, bodyHeight;
+        $(window).scroll(function(){
+            h=$(window).height(); //視窗的高度(非固定，看使用者怎麼去縮放)
+            bodyHeight=$(document.body).height()+16//body內容的高度(整個網頁的高度，固定的)，16是網頁一開始預設的margin
+            scrollToTop=$(document).scrollTop();//跟頂部的距離
+            if(Math.ceil(h+scrollToTop)>=bodyHeight){//Math.ceil() 函式會回傳大於等於所給數字的最小整數。
+                //do something...
+                console.log("Reach the bottom");
+            } 
+            console.log(`h:${h}, bodyHeight:${bodyHeight}, scrollToTop:${scrollToTop}`);
+        });
+    </script>
+</head>
+<body style="height: 1500px;;">
+
+</body>
+</html>
